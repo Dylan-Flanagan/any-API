@@ -18,4 +18,4 @@ INSERT INTO albums (name, artist, genre, year) VALUES
 ('Spiderland', 'Slint', 'Rock', '1991'),
 ('Isnt Anything', 'My Bloody Valentine', 'Shoegaze', '1988'),
 ('Building Nothing Out of Something', 'Modest Mouse', 'Rock', '2000'),
-('Richard D. James Album', 'Aphex Twin', 'Electronic', '1996',),
+('Richard D. James Album', 'Aphex Twin', 'Electronic', '1996'),
