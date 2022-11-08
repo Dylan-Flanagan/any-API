@@ -18,19 +18,19 @@ describe('albums routes', () => {
     expect(res.body).toEqual(expected);
   });
 
-  // it('/albums/:id should return album detail', async () => {
-  //   const res = await request(app).get('/albums/1');
-  //   const strangersFromTheUniverse = {
-  //     id: '1',
-  //     name: 'Strangers from the Universe',
-  //     artist: 'Thinking Fellers Union Local 282',
-  //     genre: 'Art Rock',
-  //     year: '1994',
-  //   };
-  //   expect(res.body).toEqual(strangersFromTheUniverse);
-  // });
+  it('/albums/:id should return album detail', async () => {
+    const res = await request(app).get('/albums/1');
+    const strangersFromTheUniverse = {
+      id: '1',
+      name: 'Strangers from the Universe',
+      artist: 'Thinking Fellers Union Local 282',
+      genre: 'Art Rock',
+      year: '1994',
+    };
+    expect(res.body).toEqual(strangersFromTheUniverse);
+  });
 
-  //   afterAll(() => {
-  //     pool.end();
-  //   });
+  afterAll(() => {
+    pool.end();
+  });
 });
