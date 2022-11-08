@@ -4,6 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 const { albums } = require('../lib/albums-data.js');
+const { films } = require('../lib/films-data.js');
 
 describe('albums routes', () => {
   beforeEach(() => {
@@ -30,7 +31,21 @@ describe('albums routes', () => {
     expect(res.body).toEqual(strangersFromTheUniverse);
   });
 
-  afterAll(() => {
-    pool.end();
+  describe('films routes', () => {
+    beforeEach(() => {
+      return setup(pool);
+    });
+
+    it('/films should return a list of films', async () => {
+      const res = await request(app).get('/films');
+      const expected = films.map((film) => {
+        return { id: film.id, name: film.name };
+      });
+      expect(res.body).toEqual(expected);
+    });
+
+    afterAll(() => {
+      pool.end();
+    });
   });
 });
