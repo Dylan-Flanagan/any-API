@@ -43,6 +43,17 @@ describe('albums routes', () => {
       });
       expect(res.body).toEqual(expected);
     });
+    it('/albums/:id should return album detail', async () => {
+      const res = await request(app).get('/albums/1');
+      const thereWillBeBlood = {
+        id: '1',
+        name: 'There Will Be Blood',
+        director: 'Paul Thomas Anderson',
+        genre: 'Period Drama',
+        year: 2007,
+      };
+      expect(res.body).toEqual(thereWillBeBlood);
+    });
 
     afterAll(() => {
       pool.end();
