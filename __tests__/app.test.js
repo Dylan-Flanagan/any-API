@@ -25,7 +25,7 @@ describe('albums routes', () => {
       name: 'Strangers from the Universe',
       artist: 'Thinking Fellers Union Local 282',
       genre: 'Art Rock',
-      year: '1994',
+      year: 1994,
     };
     expect(res.body).toEqual(strangersFromTheUniverse);
   });
