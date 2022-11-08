@@ -43,8 +43,8 @@ describe('albums routes', () => {
       });
       expect(res.body).toEqual(expected);
     });
-    it('/albums/:id should return album detail', async () => {
-      const res = await request(app).get('/albums/1');
+    it('/films/:id should return film detail', async () => {
+      const res = await request(app).get('/films/1');
       const thereWillBeBlood = {
         id: '1',
         name: 'There Will Be Blood',
